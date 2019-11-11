@@ -19,6 +19,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <springcloud.version>2.0.0.RELEASE</springcloud.version>
         <hutool.version>4.3.1</hutool.version>
         <lombok.version>1.18.10</lombok.version>
         <thymeleaf.version>2.1.4.RELEASE</thymeleaf.version>
@@ -64,7 +65,28 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-openfeign-dependencies</artifactId>
-                <version>2.0.0.RELEASE</version>
+                <version>${springcloud.version}</version>
+            </dependency>
+
+            <!--zipkin 服务链路追踪服务器-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-zipkin</artifactId>
+                <version>${springcloud.version}</version>
+            </dependency>
+
+            <!--配置服务器-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-config-server</artifactId>
+                <version>${springcloud.version}</version>
+            </dependency>
+
+            <!--配置服务器访问-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-config</artifactId>
+                <version>${springcloud.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -74,5 +96,6 @@
         <module>product-data-service</module>
         <module>product-view-service-ribbon</module>
         <module>product-view-service-feign</module>
+        <module>config-server</module>
     </modules>
 </project>
